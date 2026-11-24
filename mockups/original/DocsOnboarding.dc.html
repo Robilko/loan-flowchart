@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Документы — первый вход</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #ffffff; color: #343434; font-family: Raleway, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-feature-settings: 'lnum';">
+  <div style="height: 64px; display: flex; align-items: center; gap: 4px; padding: 0 8px 0 4px;">
+    <button type="button" aria-label="Назад" style="width: 48px; height: 48px; border: 0; padding: 0; background: transparent; display: flex; align-items: center; justify-content: center;">
+      <svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path fill="#c30000" d="M7.134,11.94L6.073,13L0.294,7.223C0.201,7.131 0.127,7.021 0.076,6.899C0.026,6.778 0,6.648 0,6.517C0,6.385 0.026,6.255 0.076,6.134C0.127,6.013 0.201,5.903 0.294,5.81L6.073,0.03L7.133,1.09L1.709,6.515L7.134,11.94Z"></path></svg>
+    </button>
+    <h1 style="margin: 0; font-size: 20px; font-weight: 600;">Документы</h1>
+  </div>
+  <div style="padding: 15px; display: flex; flex-direction: column; gap: 25px;">
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+      <h2 style="margin: 0; font-size: 16px; font-weight: 700;">Шаг 1. Добавьте необходимые документы:</h2>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 16px;">Фото паспорта или ID-карты</span><span style="font-size: 10px; color: #848484;">По которому Вы въехали в Россию</span></div>
+        <img src="/_blob/dbade3f32cf98933833e9a546e7dc186" alt="" style="width: 25px; height: 25px;">
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 16px;">Фото миграционной карты, РВП вида на жительство или визы</span><span style="font-size: 10px; color: #848484;">Не требуется для граждан РФ</span></div>
+        <img src="/_blob/13551e29e07ff7965f9c5828a4dcbbdf" alt="" style="width: 25px; height: 25px;">
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="flex: 1; font-size: 16px;">Фото регистрации</span>
+        <img src="/_blob/3c9e928e1e2ea74d91929e9383f979a1" alt="" style="width: 25px; height: 25px;">
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;"><h2 style="flex: 1; margin: 0; font-size: 16px; font-weight: 700;">Шаг 2. Проверьте корректность введенных данных</h2><img src="/_blob/6fca2324aef04901d3edafaf4e91c64e" alt="" style="width: 25px; height: 25px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;"><h2 style="flex: 1; margin: 0; font-size: 16px; font-weight: 700;">Шаг 3. Сделайте ваше фото с паспортом</h2><img src="/_blob/89997098e85437607c430fb3c334ea56" alt="" style="width: 25px; height: 25px;"></div>
+    <div style="display: flex; align-items: center; gap: 10px;"><h2 style="flex: 1; margin: 0; font-size: 16px; font-weight: 700;">Шаг 4. Отправьте данные и фото на проверку</h2><img src="/_blob/5fbe78a5420d474d8dd8be2dbb7249ec" alt="" style="width: 25px; height: 25px;"></div>
+  </div>
+  <div style="position: absolute; left: 0; right: 0; bottom: 74px; padding: 15px 15px 25px; display: flex; flex-direction: column; gap: 15px; background: #ffffff;">
+    <label style="display: flex; align-items: flex-start; gap: 8px;">
+      <span aria-hidden="true" style="flex: none; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;"><span style="width: 18px; height: 18px; box-sizing: border-box; border: 2px solid #575757; border-radius: 2px;"></span></span>
+      <input type="checkbox" aria-label="Согласие на обработку персональных данных" style="position: absolute; opacity: 0; width: 1px; height: 1px;">
+      <span style="font-size: 12px; line-height: 1.35; color: #848484;">Я даю согласие ООО МКК «Байбол» на обработку моих персональных данных в целях рассмотрения заявки на получение займа, в соответствии c Политикой обработки персональных данных ООО МКК «Байбол»</span>
+    </label>
+    <button type="button" disabled style="height: 40px; border: 0; border-radius: 26px; background: #575757; color: #ffffff; font: 700 16px Raleway, 'Helvetica Neue', Arial, sans-serif;">Продолжить</button>
+  </div>
+  <div style="position: absolute; left: 0; bottom: 0;">
+    <dc-import name="BottomBar" tab="loan" hint-size="390px,101px"></dc-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

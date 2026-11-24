@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Документы — что добавить</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #ffffff; color: #343434; font-family: Raleway, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-feature-settings: 'lnum';">
+  <div style="height: 64px; display: flex; align-items: center; gap: 4px; padding: 0 8px 0 4px;">
+    <button type="button" aria-label="Назад" style="width: 48px; height: 48px; border: 0; padding: 0; background: transparent; display: flex; align-items: center; justify-content: center;">
+      <svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path fill="#c30000" d="M7.134,11.94L6.073,13L0.294,7.223C0.201,7.131 0.127,7.021 0.076,6.899C0.026,6.778 0,6.648 0,6.517C0,6.385 0.026,6.255 0.076,6.134C0.127,6.013 0.201,5.903 0.294,5.81L6.073,0.03L7.133,1.09L1.709,6.515L7.134,11.94Z"></path></svg>
+    </button>
+    <h1 style="margin: 0; font-size: 20px; font-weight: 600;">Документы</h1>
+  </div>
+  <div style="padding: 15px; display: flex; flex-direction: column; gap: 15px;">
+    <div style="display: flex; align-items: center; padding: 0 10px;">
+      <img src="/_blob/dbade3f32cf98933833e9a546e7dc186" alt="" style="width: 25px; height: 25px;">
+      <span style="padding: 0 5px 0 10px; font-size: 16px;">Паспорт иностранного гражданина</span>
+      <img src="/_blob/6fca2324aef04901d3edafaf4e91c64e" alt="Добавлен" style="width: 16px; height: 16px;">
+    </div>
+    <button type="button" style="display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid #4ac0c6; border-radius: 10px; background: #e3fdff; text-align: left; font-family: inherit;">
+      <img src="/_blob/13551e29e07ff7965f9c5828a4dcbbdf" alt="" style="width: 25px; height: 25px;">
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 16px; font-weight: 500; color: #343434;">Миграционная карта</span>
+        <span style="font-size: 12px; font-weight: 500; color: #4ac0c6;">добавить</span>
+      </span>
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4ac0c6" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+    </button>
+  </div>
+  <p style="position: absolute; left: 15px; right: 15px; bottom: 89px; margin: 0; font-size: 12px; line-height: 1.4; color: #848484; white-space: pre-line;">Загрузите документ.
+Следующие документы появятся автоматически.</p>
+  <div style="position: absolute; left: 0; bottom: 0;">
+    <dc-import name="BottomBar" tab="loan" hint-size="390px,101px"></dc-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

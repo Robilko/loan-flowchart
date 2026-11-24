@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Главная — идентификация не завершена</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #ffffff; color: #343434; font-family: Raleway, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-feature-settings: 'lnum';">
+  <dc-import name="HomeTop" hint-size="390px,202px"></dc-import>
+  <div style="padding-top: 45px; display: flex; flex-direction: column; gap: 20px;">
+    <section aria-label="Оформление займа" style="margin: 0 15px; border-radius: 18px; background: #efefef; padding: 20px 15px 15px; display: flex; flex-direction: column; gap: 15px;">
+      <div style="display: flex; align-items: flex-start; gap: 10px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 800; line-height: 1.2;">Быстрый займ<br>до <span style="color: #c30000;">50 000 ₽</span></h2>
+          <p style="margin: 0; font-size: 14px; line-height: 1.4; color: #575757;">Пройдите процедуру идентификации, чтобы оформить займ.</p>
+        </div>
+        <img src="/_blob/1d09da2a658081bb8617754ad9cc8441" alt="" style="width: 104px; height: 123px; object-fit: contain; flex: none;">
+      </div>
+      <button type="button" style="height: 40px; border: 0; border-radius: 26px; background: #c30000; color: #ffffff; font: 700 16px Raleway, 'Helvetica Neue', Arial, sans-serif;">Продолжить</button>
+    </section>
+    <div style="display: flex; gap: 12px; padding: 0 15px;">
+      <button type="button" style="flex: 1; height: 44px; border: 0; border-radius: 16px; background: #c30000; padding: 0 8px; display: flex; align-items: center; justify-content: center; gap: 6px; color: #ffffff; font: 700 16px Raleway, 'Helvetica Neue', Arial, sans-serif;"><svg width="30" height="30" viewBox="0 0 25 25" aria-hidden="true"><path fill="#ffffff" d="M13.125,9.595H19.313L13.125,3.627V9.595ZM5.25,2H14.25L21,8.51V21.529C21,22.105 20.763,22.657 20.341,23.063C19.919,23.471 19.347,23.699 18.75,23.699H5.25C4.653,23.699 4.081,23.471 3.659,23.063C3.237,22.657 3,22.105 3,21.529V4.17C3,2.966 4.001,2 5.25,2ZM15.375,19.359V17.189H5.25V19.359H15.375ZM18.75,15.019V12.849H5.25V15.019H18.75Z"></path></svg>Мои займы</button>
+      <button type="button" style="flex: 1; height: 44px; border: 0; border-radius: 16px; background: #343434; padding: 0 8px; display: flex; align-items: center; justify-content: center; gap: 6px; color: #ffffff; font: 700 16px Raleway, 'Helvetica Neue', Arial, sans-serif;"><svg width="30" height="30" viewBox="-2 -5 24 25" aria-hidden="true"><path fill="#ffffff" d="M19.753,5.962C19.997,5.962 19.996,5.962 19.996,6.194C19.996,8.317 19.995,10.44 19.996,12.563C19.997,13.557 19.133,14.433 18.121,14.436C15.552,14.441 12.981,14.439 10.411,14.439C7.931,14.439 5.451,14.441 2.971,14.436C2.525,14.436 2.077,14.471 1.633,14.411C0.75,14.291 0.037,13.535 0.013,12.657C-0.01,11.843 0.005,11.027 0.004,10.212V6.191C0.004,5.963 0.004,5.963 0.241,5.963C3.5,5.963 6.76,5.962 10.019,5.962H19.753ZM17.997,0C18.59,0 19.095,0.189 19.497,0.623C19.822,0.973 19.986,1.39 19.996,1.861C20.005,2.287 19.996,2.714 20,3.14C20.002,3.262 19.968,3.312 19.831,3.313C16.933,3.309 14.036,3.31 11.138,3.31H5.525C4.333,3.31 3.141,3.315 1.948,3.315C1.35,3.315 0.751,3.31 0.153,3.31C0.054,3.31 0.005,3.284 0.006,3.177C0.011,2.703 -0.006,2.23 0.014,1.758C0.049,0.899 0.747,0.157 1.61,0.03C1.743,0.011 1.874,0.001 2.008,0.001C7.337,0.002 12.668,0.002 17.997,0Z"></path></svg>Мои карты</button>
+    </div>
+  </div>
+  <div style="position: absolute; left: 0; bottom: 0;">
+    <dc-import name="BottomBar" tab="home" soaring="{{ yes }}" hint-size="390px,101px"></dc-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return { yes: true };
+}
+}
+</script>
+</body>
+</html>
