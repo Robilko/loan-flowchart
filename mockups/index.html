@@ -1,7 +1,265 @@
-<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Заявка на займ — макеты экранов</title><style>
-*{box-sizing:border-box}body{margin:0;color:#282828;background:#eee;font:15px Arial,sans-serif}header{padding:18px 24px;background:#fff;border-bottom:1px solid #ddd}h1{font-size:22px;margin:0 0 8px}header p{margin:0;color:#666}main{display:flex}nav{width:340px;flex-shrink:0;height:calc(100vh - 95px);overflow:auto;background:#fff;padding:12px}nav button{display:block;text-align:left;width:100%;border:0;border-radius:6px;background:none;padding:12px;font:inherit;cursor:pointer}nav button:hover{background:#eee}nav button[aria-current=true]{background:#c30000;color:white}.stage{padding:24px;flex:1;overflow:auto;height:calc(100vh - 95px)}h2{font-size:18px;max-width:620px;margin:0 0 20px}iframe{display:block;border:0;width:390px;background:white;box-shadow:0 3px 20px #0002}a{color:inherit}@media(max-width:760px){main{display:block}nav{width:auto;height:190px}.stage{height:auto;padding:16px}}
-</style><header><a href="../" style="display:inline-block;margin-bottom:12px">Блок-схема</a><h1>Заявка на займ</h1><p>Макеты и общие компоненты · последняя найденная редакция от 6 ноября 2026</p></header><main><nav aria-label="Экраны"><button data-file="Main.html" data-h="844">1.1 Есть · Главная: калькулятор «Быстрые деньги»</button><button data-file="LoanApplication.html" data-h="940">1.2 Есть · «Оформить заявку»: условия и короткая анкета</button><button data-file="LoanConditions.html" data-h="844">1.3 Новый · Условия займа → «Заполнить заявку»</button><button data-file="FormPrefilled.html" data-h="1460">2.1 Новый · Анкета: клиент есть в 1С</button><button data-file="FormEmpty.html" data-h="1440">2.2 Новый · Анкета: нового клиента</button><button data-file="DuplicateClient.html" data-h="844">2.3 Есть · Найден клиент с другим номером: заявка уходит лидом</button><button data-file="DocsOnboarding.html" data-h="844">3.1 Есть · Документы: первый вход</button><button data-file="DocsChecklist.html" data-h="844">3.2 Есть · Документы: что добавить</button><button data-file="AddDocument.html" data-h="844">3.3 Есть · Добавление документа</button><button data-file="PhotoWithPassport.html" data-h="844">3.4 Есть · Фото с паспортом</button><button data-file="DocsDone.html" data-h="844">3.5 Новый · Документы добавлены → дальше</button><button data-file="AspCurrent.html" data-h="844">4.1 Есть · Подписание документов (код запрашивает менеджер)</button><button data-file="AspConsent.html" data-h="844">4.2 Новый · Согласия АСП и ПДн → «Выслать код подписания»</button><button data-file="AspCode.html" data-h="844">4.3 Новый · Код для подписания согласий</button><button data-file="SendApplication.html" data-h="844">5.1 Новый · Отправка заявки → «Отправить заявку»</button><button data-file="ApplicationCode.html" data-h="844">5.2 Есть · Подтверждение заявки: код</button><button data-file="ApplicationCodeError.html" data-h="844">5.3 Есть · Неверный код</button><button data-file="ApplicationSigned.html" data-h="844">5.4 Есть · Заявка подписана</button><button data-file="HomeReview.html" data-h="844">6.1 Есть · Главная: заявка на рассмотрении</button><button data-file="HomeApproved.html" data-h="844">6.2 Есть · Главная: заявка одобрена</button><button data-file="HomeRefused.html" data-h="844">6.3 Есть · Главная: отказ по заявке</button><button data-file="ChooseConditions.html" data-h="844">6.4 Новый · Выбор суммы и срока в одобренном диапазоне</button><button data-file="LoanRequestDetails.html" data-h="1140">7.1 Есть · Заявка: условия и график платежей</button><button data-file="LoanDocuments.html" data-h="844">7.2 Есть · Документы по займу</button><button data-file="ContractCode.html" data-h="844">7.3 Есть · Подписание договора: код</button><button data-file="ContractSigned.html" data-h="844">7.4 Есть · Документы подписаны</button><button data-file="BottomBar.html" data-h="101">Нижнее меню (общая часть)</button><button data-file="HomeTop.html" data-h="202">Шапка главной (общая часть)</button><button data-file="HomeStart.html" data-h="844">8.1 Новый · Главная: клиента нет в 1С → «Начать»</button><button data-file="HomeContinue.html" data-h="844">8.2 Новый · Главная: идентификация не завершена → «Продолжить»</button><button data-file="HomeAsp.html" data-h="844">8.3 Есть · Главная: требуется подписание АСП</button></nav><section class="stage"><h2 id="title"></h2><iframe title="Макет экрана" sandbox="allow-same-origin" src="screens/HomeStart.html"></iframe></section></main><script>
-const frame=document.querySelector('iframe'), title=document.querySelector('#title');
-function show(b){document.querySelectorAll('nav button').forEach(x=>x.removeAttribute('aria-current'));b.setAttribute('aria-current','true');title.textContent=b.textContent;frame.src='screens/'+b.dataset.file;frame.style.height=b.dataset.h+'px';}
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b));show(document.querySelector('[data-file="HomeStart.html"]'));
-</script></html>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Заявка на займ — доска макетов</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; color: #252b35; background: #edf0f4; font: 15px Arial, sans-serif; }
+header { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 14px 20px; background: white; border-bottom: 1px solid #d8dce2; }
+h1 { margin: 0; font-size: 20px; }
+a { color: #a32717; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 10px 20px; background: #fff; border-bottom: 1px solid #d8dce2; }
+button, select { padding: 8px 10px; border: 1px solid #c8ced7; border-radius: 6px; background: white; color: inherit; font: inherit; }
+button { cursor: pointer; }
+button:hover { background: #f0f2f5; }
+output { min-width: 50px; text-align: center; font-variant-numeric: tabular-nums; }
+.hint { margin-left: auto; font-size: 13px; color: #5d6570; }
+#viewport { height: calc(100dvh - var(--controls-height)); overflow: auto; cursor: grab; touch-action: none; overscroll-behavior: contain; }
+#viewport.dragging { cursor: grabbing; user-select: none; }
+#space { position: relative; }
+#board { width: 2890px; height: 12700px; position: absolute; left: 0; top: 0; transform-origin: 0 0; background-image: radial-gradient(#bfc7d0 1px, transparent 1px); background-size: 24px 24px; }
+.screen { position: absolute; }
+.screen > a { display: block; min-height: 70px; padding-bottom: 16px; font-size: 21px; font-weight: 600; line-height: 1.3; color: #273342; text-decoration: none; }
+.screen > a:hover { text-decoration: underline; }
+iframe { display: block; border: 0; background: white; pointer-events: none; box-shadow: 0 6px 24px #18283c25; }
+.stage-title { position: absolute; font-size: 42px; font-weight: 700; }
+.note { position: absolute; padding: 24px; font-size: 18px; line-height: 1.4; white-space: pre-wrap; border-radius: 12px; box-shadow: 0 2px 8px #25334612; }
+@media (max-width: 760px) { header { gap: 12px; } .hint { display:none; } select { max-width: 100%; } }
+</style>
+</head>
+<body>
+<header><h1>Заявка на займ</h1><a href="../">Блок-схема</a><a href="list.html">По одному экрану</a></header>
+<div class="toolbar">
+<label for="stage">Этап</label><select id="stage"><option value="rowA">1. Вход в оформление займа</option><option value="rowB">2. Анкета</option><option value="rowC">3. Документы</option><option value="rowD">4. Согласие на АСП и обработку ПДн</option><option value="rowE">5. Отправка заявки</option><option value="rowF">6. Решение по заявке</option><option value="rowG">7. Подписание договора</option><option value="rowH">Общие части экранов</option><option value="rowI">8. Главная: вернуться к оформлению</option></select>
+<button id="minus" aria-label="Уменьшить масштаб">−</button>
+<output id="zoom" aria-live="polite"></output>
+<button id="plus" aria-label="Увеличить масштаб">+</button>
+<button id="fit">По ширине</button><button id="overview">Вся доска</button><button id="actual">100%</button>
+<span class="hint">Перетаскивайте доску · Ctrl / ⌘ + колесо — масштаб · название экрана открывает макет</span>
+</div>
+<div id="viewport" aria-label="Общая доска макетов" tabindex="0">
+<div id="space"><div id="board"><section class="screen" style="left:80px;top:380px;width:390px">
+<a href="screens/Main.html" target="_blank" rel="noopener">1.1 Есть · Главная: калькулятор «Быстрые деньги»</a>
+<iframe src="screens/Main.html" title="1.1 Есть · Главная: калькулятор «Быстрые деньги»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:380px;width:390px">
+<a href="screens/LoanApplication.html" target="_blank" rel="noopener">1.2 Есть · «Оформить заявку»: условия и короткая анкета</a>
+<iframe src="screens/LoanApplication.html" title="1.2 Есть · «Оформить заявку»: условия и короткая анкета" width="390" height="940" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:380px;width:390px">
+<a href="screens/LoanConditions.html" target="_blank" rel="noopener">1.3 Новый · Условия займа → «Заполнить заявку»</a>
+<iframe src="screens/LoanConditions.html" title="1.3 Новый · Условия займа → «Заполнить заявку»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:1740px;width:390px">
+<a href="screens/FormPrefilled.html" target="_blank" rel="noopener">2.1 Новый · Анкета: клиент есть в 1С</a>
+<iframe src="screens/FormPrefilled.html" title="2.1 Новый · Анкета: клиент есть в 1С" width="390" height="1460" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:1740px;width:390px">
+<a href="screens/FormEmpty.html" target="_blank" rel="noopener">2.2 Новый · Анкета: нового клиента</a>
+<iframe src="screens/FormEmpty.html" title="2.2 Новый · Анкета: нового клиента" width="390" height="1440" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:1740px;width:390px">
+<a href="screens/DuplicateClient.html" target="_blank" rel="noopener">2.3 Есть · Найден клиент с другим номером: заявка уходит лидом</a>
+<iframe src="screens/DuplicateClient.html" title="2.3 Есть · Найден клиент с другим номером: заявка уходит лидом" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:3860px;width:390px">
+<a href="screens/DocsOnboarding.html" target="_blank" rel="noopener">3.1 Есть · Документы: первый вход</a>
+<iframe src="screens/DocsOnboarding.html" title="3.1 Есть · Документы: первый вход" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:3860px;width:390px">
+<a href="screens/DocsChecklist.html" target="_blank" rel="noopener">3.2 Есть · Документы: что добавить</a>
+<iframe src="screens/DocsChecklist.html" title="3.2 Есть · Документы: что добавить" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:3860px;width:390px">
+<a href="screens/AddDocument.html" target="_blank" rel="noopener">3.3 Есть · Добавление документа</a>
+<iframe src="screens/AddDocument.html" title="3.3 Есть · Добавление документа" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1490px;top:3860px;width:390px">
+<a href="screens/PhotoWithPassport.html" target="_blank" rel="noopener">3.4 Есть · Фото с паспортом</a>
+<iframe src="screens/PhotoWithPassport.html" title="3.4 Есть · Фото с паспортом" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1960px;top:3860px;width:390px">
+<a href="screens/DocsDone.html" target="_blank" rel="noopener">3.5 Новый · Документы добавлены → дальше</a>
+<iframe src="screens/DocsDone.html" title="3.5 Новый · Документы добавлены → дальше" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:5280px;width:390px">
+<a href="screens/AspCurrent.html" target="_blank" rel="noopener">4.1 Есть · Подписание документов (код запрашивает менеджер)</a>
+<iframe src="screens/AspCurrent.html" title="4.1 Есть · Подписание документов (код запрашивает менеджер)" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:5280px;width:390px">
+<a href="screens/AspConsent.html" target="_blank" rel="noopener">4.2 Новый · Согласия АСП и ПДн → «Выслать код подписания»</a>
+<iframe src="screens/AspConsent.html" title="4.2 Новый · Согласия АСП и ПДн → «Выслать код подписания»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:5280px;width:390px">
+<a href="screens/AspCode.html" target="_blank" rel="noopener">4.3 Новый · Код для подписания согласий</a>
+<iframe src="screens/AspCode.html" title="4.3 Новый · Код для подписания согласий" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:6544px;width:390px">
+<a href="screens/SendApplication.html" target="_blank" rel="noopener">5.1 Новый · Отправка заявки → «Отправить заявку»</a>
+<iframe src="screens/SendApplication.html" title="5.1 Новый · Отправка заявки → «Отправить заявку»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:6544px;width:390px">
+<a href="screens/ApplicationCode.html" target="_blank" rel="noopener">5.2 Есть · Подтверждение заявки: код</a>
+<iframe src="screens/ApplicationCode.html" title="5.2 Есть · Подтверждение заявки: код" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:6544px;width:390px">
+<a href="screens/ApplicationCodeError.html" target="_blank" rel="noopener">5.3 Есть · Неверный код</a>
+<iframe src="screens/ApplicationCodeError.html" title="5.3 Есть · Неверный код" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1490px;top:6544px;width:390px">
+<a href="screens/ApplicationSigned.html" target="_blank" rel="noopener">5.4 Есть · Заявка подписана</a>
+<iframe src="screens/ApplicationSigned.html" title="5.4 Есть · Заявка подписана" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:7964px;width:390px">
+<a href="screens/HomeReview.html" target="_blank" rel="noopener">6.1 Есть · Главная: заявка на рассмотрении</a>
+<iframe src="screens/HomeReview.html" title="6.1 Есть · Главная: заявка на рассмотрении" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:7964px;width:390px">
+<a href="screens/HomeApproved.html" target="_blank" rel="noopener">6.2 Есть · Главная: заявка одобрена</a>
+<iframe src="screens/HomeApproved.html" title="6.2 Есть · Главная: заявка одобрена" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:7964px;width:390px">
+<a href="screens/HomeRefused.html" target="_blank" rel="noopener">6.3 Есть · Главная: отказ по заявке</a>
+<iframe src="screens/HomeRefused.html" title="6.3 Есть · Главная: отказ по заявке" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1490px;top:7964px;width:390px">
+<a href="screens/ChooseConditions.html" target="_blank" rel="noopener">6.4 Новый · Выбор суммы и срока в одобренном диапазоне</a>
+<iframe src="screens/ChooseConditions.html" title="6.4 Новый · Выбор суммы и срока в одобренном диапазоне" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:9228px;width:390px">
+<a href="screens/LoanRequestDetails.html" target="_blank" rel="noopener">7.1 Есть · Заявка: условия и график платежей</a>
+<iframe src="screens/LoanRequestDetails.html" title="7.1 Есть · Заявка: условия и график платежей" width="390" height="1140" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:9228px;width:390px">
+<a href="screens/LoanDocuments.html" target="_blank" rel="noopener">7.2 Есть · Документы по займу</a>
+<iframe src="screens/LoanDocuments.html" title="7.2 Есть · Документы по займу" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:9228px;width:390px">
+<a href="screens/ContractCode.html" target="_blank" rel="noopener">7.3 Есть · Подписание договора: код</a>
+<iframe src="screens/ContractCode.html" title="7.3 Есть · Подписание договора: код" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1490px;top:9228px;width:390px">
+<a href="screens/ContractSigned.html" target="_blank" rel="noopener">7.4 Есть · Документы подписаны</a>
+<iframe src="screens/ContractSigned.html" title="7.4 Есть · Документы подписаны" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:10880px;width:390px">
+<a href="screens/BottomBar.html" target="_blank" rel="noopener">Нижнее меню (общая часть)</a>
+<iframe src="screens/BottomBar.html" title="Нижнее меню (общая часть)" width="390" height="101" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:10880px;width:390px">
+<a href="screens/HomeTop.html" target="_blank" rel="noopener">Шапка главной (общая часть)</a>
+<iframe src="screens/HomeTop.html" title="Шапка главной (общая часть)" width="390" height="202" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:80px;top:11680px;width:390px">
+<a href="screens/HomeStart.html" target="_blank" rel="noopener">8.1 Новый · Главная: клиента нет в 1С → «Начать»</a>
+<iframe src="screens/HomeStart.html" title="8.1 Новый · Главная: клиента нет в 1С → «Начать»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:550px;top:11680px;width:390px">
+<a href="screens/HomeContinue.html" target="_blank" rel="noopener">8.2 Новый · Главная: идентификация не завершена → «Продолжить»</a>
+<iframe src="screens/HomeContinue.html" title="8.2 Новый · Главная: идентификация не завершена → «Продолжить»" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<section class="screen" style="left:1020px;top:11680px;width:390px">
+<a href="screens/HomeAsp.html" target="_blank" rel="noopener">8.3 Есть · Главная: требуется подписание АСП</a>
+<iframe src="screens/HomeAsp.html" title="8.3 Есть · Главная: требуется подписание АСП" width="390" height="844" sandbox="allow-same-origin" tabindex="-1"></iframe></section>
+<div class="stage-title" id="rowA" style="left:80px;top:80px;width:1330px;background:transparent">1. Вход в оформление займа</div>
+<div class="stage-title" id="rowB" style="left:80px;top:1440px;width:1330px;background:transparent">2. Анкета</div>
+<div class="stage-title" id="rowC" style="left:80px;top:3560px;width:2270px;background:transparent">3. Документы</div>
+<div class="stage-title" id="rowD" style="left:80px;top:4980px;width:1330px;background:transparent">4. Согласие на АСП и обработку ПДн</div>
+<div class="stage-title" id="rowE" style="left:80px;top:6244px;width:1800px;background:transparent">5. Отправка заявки</div>
+<div class="stage-title" id="rowF" style="left:80px;top:7664px;width:1800px;background:transparent">6. Решение по заявке</div>
+<div class="stage-title" id="rowG" style="left:80px;top:8928px;width:1800px;background:transparent">7. Подписание договора</div>
+<div class="stage-title" id="rowH" style="left:80px;top:10580px;width:860px;background:transparent">Общие части экранов</div>
+<div class="stage-title" id="rowI" style="left:80px;top:11380px;width:1330px;background:transparent">8. Главная: вернуться к оформлению</div>
+<div class="note" id="noteI" style="left:1490px;top:11680px;width:380px;background:#e1f4f3">Баннер и карточка встают на место карусели займов, в том числе вместо калькулятора «Быстрые деньги на любые цели».
+
+8.1 — IdentifyClient ответил «клиент не найден». «Начать» открывает оформление: условия (1.3), затем анкета (2.2).
+8.2 — клиент есть в 1С, но идентификация не закончена: не заполнена анкета, не хватает документов или не подписано согласие АСП. «Продолжить» ведёт на шаг, где клиент остановился: анкета (2.1), документы (3.2) или согласия (4.2).
+8.3 — карточка из кода (AspSigningCard): показывается, когда /GetPendingAgreementsToSign требует подписи. Сейчас «Подписать» открывает 4.1; по схеме — 4.2.
+
+Иллюстрация — рука с телефоном и документом из дизайн-системы.</div>
+<div class="note" id="legend" style="left:1490px;top:380px;width:380px;background:#e6e8ec">Макеты по блок-схеме «Оформление заявки на займ».
+
+«Есть» — экран уже в приложении, нарисован по коду ветки Release-candidate-3.0.1.0: тексты, цвета, отступы.
+«Новый» — экрана нет, это предложение в дизайн-системе «Байбол Онлайн».
+
+Длинные экраны нарисованы во всю высоту прокрутки.</div>
+<div class="note" id="noteA" style="left:1490px;top:940px;width:380px;background:#e1f4f3">Сейчас «Оформить заявку» (1.2) — один экран: условия и короткая анкета-лид (город, имя, фамилия, телефон). Заявка уходит менеджеру, клиент ждёт звонка; дата рождения, адрес, e-mail не собираются.
+
+По схеме условия и анкета разделены: 1.3 — только условия, «Заполнить заявку» ведёт на анкету (ряд 2).</div>
+<div class="note" id="noteB" style="left:1490px;top:1740px;width:380px;background:#fff0d9">Анкета по схеме от 02.11:
+• /CreateClient — ФИО, дата рождения, гражданство. Дозапись: пол и доход — /EditClient, e-mail и контактное лицо — /AddContactInformation, адрес — /AddClientRegistrationAddress.
+• Для города метода сохранения нет — открытый вопрос.
+• /CheckClientByName (ФИО, дата рождения, телефон): нашёлся клиент с другим номером — в MVP клиента не создаём, отправляем событие в AppMetrica, заявка уходит лидом по прежнему процессу (2.3).
+• DaData — второй этап; сначала решить, хватит ли лимитов.
+
+Поля с замком (2.1) пришли из карточки контрагента и не редактируются. Ошибки полей подсвечиваются после нажатия основной кнопки.</div>
+<div class="note" id="decisionB" style="left:1490px;top:2340px;width:380px;background:#e6f1df">Решено 29.10: клиента создаём из анкеты (2.1, 2.2) через /CreateClient. Шторка идентификации на главной уходит.
+
+В Swagger есть /AddClientContactPersons — контактные лица: возможно, подойдёт для контактного лица вместо /AddContactInformation. /SendRequestChangePhoneNumber — смена номера, пригодится, если для 2.3 решат не только отправлять лид.</div>
+<div class="note" id="noteC" style="left:2430px;top:3860px;width:380px;background:#e1f4f3">Экраны документов уже есть (3.1–3.4).
+
+3.5 — предложение: после последнего обязательного документа клиент в оформлении заявки идёт дальше — к согласию (ряд 4) или, если АСП уже подписан, сразу к отправке заявки (5.1). Документы проверяем как на «Моих документах»: /GetCounterpartyDocumentChecklistSettings, /GetTypesDocumentsUsedClient, /CheckAttachedFileCounterpartyPhotoWithPassport. Шторка заменяет «Теперь вам доступно оформление займа» из ветки Robilko/client-verification-onboarding.</div>
+<div class="note" id="noteD" style="left:1490px;top:5280px;width:380px;background:#fff0d9">Сейчас (4.1) код для согласий запрашивает менеджер: на экране нет флажков, кнопки «Выслать код» и повторной отправки. Экран открывается с карточки «Требуется подписание» на главной.
+
+По схеме клиент сам отмечает согласия и запрашивает код (4.2 → 4.3). Подпись запускает портал АСП (метод появится на его стороне), код приходит пушем или СМС. При подписании портал проверяет данные, документы и фото: АСП подписан — клиент идентифицирован. Нужно ли подписывать, сейчас отвечает /GetPendingAgreementsToSign.
+
+Открытые вопросы: свой метод портала вместо /GetPendingAgreementsToSign; переезд /EndASPRequestVerification на портал; пуш и СМС клиенту, если в документах или фото нашлась ошибка.</div>
+<div class="note" id="noteE" style="left:1960px;top:6544px;width:380px;background:#fff0d9">«Отправить заявку» (5.1) создаёт заявку в 1С и получает её ID. Сейчас так делает /ActiveClientLongTermLoanRequestStart — проверить, подходит ли он новому клиенту (в Swagger есть /NewClientLongTermLoanRequestStart). Экран кода (5.2) уже есть: при открытии сам запрашивает код через /StartClientVerification, проверяет — /EndClientVerification.
+
+Открытые вопросы:
+• Создаём заявку в 1С сразу или через портал СПР.
+• Способ получения денег, возможно, перенести на подписание договора (ряд 7).
+
+Чекбоксов с условиями и выбора способа зачисления сейчас в приложении нет.</div>
+<div class="note" id="noteF2" style="left:1960px;top:7964px;width:380px;background:#fff0d9">6.4 — предложение на случай, если СПР будет отдавать диапазон суммы и срока на выбор (открытый вопрос схемы). После «Заявка одобрена» клиент выбирает условия в этих пределах, затем открывается экран заявки (7.1). Основа — существующий экран «Изменить условия займа» у предодобренного займа: те же слайдеры, платёж и график.</div>
+<div class="note" id="noteF" style="left:2430px;top:7964px;width:380px;background:#e1f4f3">Карточки статусов уже есть. По схеме у одобренной заявки кнопка «Подписать», в приложении — «продолжить»: она открывает экран заявки (7.1).
+
+Статус обновляется по пушу или СМС и опросом раз в 15 минут — нового интерфейса это не требует.</div>
+<div class="note" id="noteG" style="left:1960px;top:9228px;width:380px;background:#e1f4f3">«Подписать» на экране заявки (7.1) видна, только когда в remote config включён showTransferMoneySigningButton. Код проверяет /EndClientVerificationAndSendPayment — он же отправляет деньги.</div></div></div>
+</div>
+<script>
+const viewport = document.querySelector('#viewport');
+const board = document.querySelector('#board');
+const space = document.querySelector('#space');
+const zoomLabel = document.querySelector('#zoom');
+const boardWidth = 2890;
+const boardHeight = 12700;
+let scale = 0.5;
+let drag = null;
+function updateControlsHeight() {
+  const height = document.querySelector('header').offsetHeight + document.querySelector('.toolbar').offsetHeight;
+  document.documentElement.style.setProperty('--controls-height', height + 'px');
+}
+function setScale(value, anchorX = viewport.clientWidth / 2, anchorY = viewport.clientHeight / 2) {
+  const worldX = (viewport.scrollLeft + anchorX) / scale;
+  const worldY = (viewport.scrollTop + anchorY) / scale;
+  scale = Math.max(0.04, Math.min(2, value));
+  board.style.transform = 'scale(' + scale + ')';
+  space.style.width = boardWidth * scale + 'px';
+  space.style.height = boardHeight * scale + 'px';
+  viewport.scrollLeft = worldX * scale - anchorX;
+  viewport.scrollTop = worldY * scale - anchorY;
+  zoomLabel.textContent = Math.round(scale * 100) + '%';
+}
+function fitWidth() {
+  setScale((viewport.clientWidth - 24) / boardWidth, 0, 0);
+}
+document.querySelector('#minus').onclick = () => setScale(scale / 1.2);
+document.querySelector('#plus').onclick = () => setScale(scale * 1.2);
+document.querySelector('#actual').onclick = () => setScale(1);
+document.querySelector('#fit').onclick = fitWidth;
+document.querySelector('#overview').onclick = () => {
+  setScale(Math.min((viewport.clientWidth - 24) / boardWidth, (viewport.clientHeight - 24) / boardHeight), 0, 0);
+  viewport.scrollTo(0, 0);
+};
+document.querySelector('#stage').onchange = (event) => {
+  const heading = document.getElementById(event.target.value);
+  if (scale < 0.25) fitWidth();
+  viewport.scrollTo({left: 0, top: Math.max(0, heading.offsetTop * scale - 24), behavior: 'smooth'});
+};
+viewport.addEventListener('wheel', event => {
+  if (!event.ctrlKey && !event.metaKey) return;
+  event.preventDefault();
+  const rect = viewport.getBoundingClientRect();
+  setScale(scale * Math.exp(-event.deltaY * 0.005), event.clientX - rect.left, event.clientY - rect.top);
+}, {passive: false});
+viewport.addEventListener('pointerdown', event => {
+  if (event.button !== 0 || event.target.closest('a')) return;
+  drag = {x: event.clientX, y: event.clientY, left: viewport.scrollLeft, top: viewport.scrollTop};
+  viewport.setPointerCapture(event.pointerId);
+  viewport.classList.add('dragging');
+});
+viewport.addEventListener('pointermove', event => {
+  if (!drag) return;
+  viewport.scrollLeft = drag.left - (event.clientX - drag.x);
+  viewport.scrollTop = drag.top - (event.clientY - drag.y);
+});
+function stopDrag() {
+  drag = null;
+  viewport.classList.remove('dragging');
+}
+viewport.addEventListener('pointerup', stopDrag);
+viewport.addEventListener('pointercancel', stopDrag);
+viewport.addEventListener('keydown', event => {
+  if (event.key === '+' || event.key === '=') { event.preventDefault(); setScale(scale * 1.2); }
+  if (event.key === '-') { event.preventDefault(); setScale(scale / 1.2); }
+});
+window.addEventListener('resize', updateControlsHeight);
+updateControlsHeight();
+fitWidth();
+viewport.scrollTo(0, 0);
+</script>
+</body>
+</html>
